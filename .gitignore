@@ -1,0 +1,11 @@
+# folders
+node_modules
+bin
+obj
+packages
+.vs
+
+# files
+*.js
+*.js.map
+*/*.suo

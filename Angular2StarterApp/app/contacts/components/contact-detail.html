@@ -1,0 +1,20 @@
+<div padding="5px" *ngIf="contact">
+    <div class="row">
+        <div class="col-sm-12">
+            <img [src]="contact.img | image" alt="" class="img-thumbnail"/>
+        </div>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-3">
+                     <a [routerLink]="['EditContact', {id: contact.id}]"><h2>{{contact.name | uppercase}}</h2></a> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-2">
+                    <div *ngIf="contact.email"><strong>Email:</strong> {{contact.email | uppercase}}</div>
+                    <div *ngIf="contact.phone"><strong>Phone:</strong> {{contact.phone | phonenumber}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
