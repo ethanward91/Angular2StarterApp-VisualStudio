@@ -6,7 +6,7 @@ export class TodoModel {
         public id:string ="",
         public name:string = "", 
         public notes:string = ""){
-            this.status = 'uncompleted';
+            this.status = 'Incomplete';
             
         }
 }

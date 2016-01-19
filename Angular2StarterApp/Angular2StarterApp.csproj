@@ -207,7 +207,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TodosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -215,68 +217,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\bin\app.js" />
-    <Content Include="app\bin\app.js.map" />
-    <Content Include="app\bin\boot.js" />
-    <Content Include="app\bin\boot.js.map" />
-    <Content Include="app\bin\common\common.js" />
-    <Content Include="app\bin\common\common.js.map" />
-    <Content Include="app\bin\common\components\search-box-component.js" />
-    <Content Include="app\bin\common\components\search-box-component.js.map" />
-    <Content Include="app\bin\common\components\title-component.js" />
-    <Content Include="app\bin\common\components\title-component.js.map" />
-    <Content Include="app\bin\common\components\view-header-component.js" />
-    <Content Include="app\bin\common\components\view-header-component.js.map" />
-    <Content Include="app\bin\common\directives\on-hover-directive.js" />
-    <Content Include="app\bin\common\directives\on-hover-directive.js.map" />
-    <Content Include="app\bin\common\directives\padding-directive.js" />
-    <Content Include="app\bin\common\directives\padding-directive.js.map" />
-    <Content Include="app\bin\common\pipes\filter-pipe.js" />
-    <Content Include="app\bin\common\pipes\filter-pipe.js.map" />
-    <Content Include="app\bin\common\pipes\image-pipe.js" />
-    <Content Include="app\bin\common\pipes\image-pipe.js.map" />
-    <Content Include="app\bin\common\pipes\phone-number-pipe.js" />
-    <Content Include="app\bin\common\pipes\phone-number-pipe.js.map" />
-    <Content Include="app\bin\contacts\components\contact-add.js" />
-    <Content Include="app\bin\contacts\components\contact-add.js.map" />
-    <Content Include="app\bin\contacts\components\contact-container.js" />
-    <Content Include="app\bin\contacts\components\contact-container.js.map" />
-    <Content Include="app\bin\contacts\components\contact-details.js" />
-    <Content Include="app\bin\contacts\components\contact-details.js.map" />
-    <Content Include="app\bin\contacts\components\contact-edit.js" />
-    <Content Include="app\bin\contacts\components\contact-edit.js.map" />
-    <Content Include="app\bin\contacts\components\contact-form.js" />
-    <Content Include="app\bin\contacts\components\contact-form.js.map" />
-    <Content Include="app\bin\contacts\components\contact-item.js" />
-    <Content Include="app\bin\contacts\components\contact-item.js.map" />
-    <Content Include="app\bin\contacts\components\contact-list.js" />
-    <Content Include="app\bin\contacts\components\contact-list.js.map" />
-    <Content Include="app\bin\contacts\pipes\filter-pipe.js" />
-    <Content Include="app\bin\contacts\pipes\filter-pipe.js.map" />
-    <Content Include="app\bin\contacts\services\contact-model.js" />
-    <Content Include="app\bin\contacts\services\contact-model.js.map" />
-    <Content Include="app\bin\contacts\services\contacts-service.js" />
-    <Content Include="app\bin\contacts\services\contacts-service.js.map" />
-    <Content Include="app\bin\nav\components\nav.js" />
-    <Content Include="app\bin\nav\components\nav.js.map" />
-    <Content Include="app\bin\nav\components\side-menu.js" />
-    <Content Include="app\bin\nav\components\side-menu.js.map" />
-    <Content Include="app\bin\nav\nav.js" />
-    <Content Include="app\bin\nav\nav.js.map" />
-    <Content Include="app\bin\nav\side-menu.js" />
-    <Content Include="app\bin\nav\side-menu.js.map" />
-    <Content Include="app\bin\todo\components\todo-add.js" />
-    <Content Include="app\bin\todo\components\todo-add.js.map" />
-    <Content Include="app\bin\todo\components\todo-container.js" />
-    <Content Include="app\bin\todo\components\todo-container.js.map" />
-    <Content Include="app\bin\todo\components\todo-form.js" />
-    <Content Include="app\bin\todo\components\todo-form.js.map" />
-    <Content Include="app\bin\todo\components\todo-list.js" />
-    <Content Include="app\bin\todo\components\todo-list.js.map" />
-    <Content Include="app\bin\todo\services\todo-model.js" />
-    <Content Include="app\bin\todo\services\todo-model.js.map" />
-    <Content Include="app\bin\todo\services\todo-service.js" />
-    <Content Include="app\bin\todo\services\todo-service.js.map" />
     <Content Include="app\contacts\components\contact-detail.html" />
     <Content Include="app\contacts\components\contact-form.html" />
     <Content Include="app\contacts\components\contact-item.css" />
@@ -346,6 +286,19 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Angular2StarterApp.Core\Angular2StarterApp.Core.csproj">
+      <Project>{fd382993-0b6b-4201-996b-491693c3f3db}</Project>
+      <Name>Angular2StarterApp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Angular2StarterApp.Models\Angular2StarterApp.Models.csproj">
+      <Project>{1c1aed44-d8ad-42ad-9eca-c403f7ce34ab}</Project>
+      <Name>Angular2StarterApp.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\bin\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -363,7 +316,7 @@
     <TypeScriptOutDir>
     </TypeScriptOutDir>
     <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
-    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptNoEmitOnError>False</TypeScriptNoEmitOnError>
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
     <TypeScriptMapRoot />
     <TypeScriptSourceRoot />
